@@ -3,96 +3,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MOH STORE - متجر التطبيقات</title>
+    <title>MOH STORE - VIP System</title>
     <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #0d1117;
-            color: #c9d1d9;
+        * {
+            box-sizing: border-box;
             margin: 0;
-            padding: 20px;
-            text-align: center;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        body {
+            background-color: #080a0f;
+            color: #ffffff;
+            padding: 20px 15px;
+            display: flex;
+            justify-content: center;
         }
         .container {
-            max-width: 600px;
-            margin: 40px auto;
-            background: #161b22;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            width: 100%;
+            max-width: 480px;
+            text-align: center;
         }
-        h1 {
-            color: #58a6ff;
-            margin-bottom: 10px;
+        .header {
+            margin-top: 15px;
+            margin-bottom: 25px;
         }
-        p {
-            color: #8b949e;
-            margin-bottom: 30px;
+        .logo-title {
+            font-size: 32px;
+            font-weight: 900;
+            background: linear-gradient(90deg, #ff416c, #8a2387, #58a6ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 1px;
         }
-        .app-card {
-            background: #21262d;
-            padding: 15px 20px;
-            margin: 15px 0;
-            border-radius: 8px;
+        .subtitle {
+            color: #6e7681;
+            font-size: 11px;
+            letter-spacing: 2px;
+            margin-top: 5px;
+            font-weight: 600;
+        }
+        /* شبكة الأشهر */
+        .months-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        .month-card {
+            background: #11151c;
+            border: 1px solid #1f2430;
+            border-radius: 20px;
+            padding: 25px 15px;
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
-            border: 1px solid #30363d;
-        }
-        .btn {
-            background: #238636;
-            color: white;
-            padding: 8px 16px;
-            border-radius: 6px;
+            justify-content: center;
             text-decoration: none;
+            color: #ffffff;
+            position: relative;
+            transition: all 0.2s ease;
+        }
+        .month-card:active {
+            transform: scale(0.96);
+            border-color: #58a6ff;
+        }
+        .dot {
+            width: 6px;
+            height: 6px;
+            background-color: #238636;
+            border-radius: 50%;
+            position: absolute;
+            top: 15px;
+            box-shadow: 0 0 8px #238636;
+        }
+        .month-name {
+            font-size: 20px;
             font-weight: bold;
-            transition: background 0.2s;
+            margin-top: 8px;
         }
-        .btn:hover {
-            background: #2ea043;
+        .month-num {
+            font-size: 11px;
+            color: #484f58;
+            margin-top: 4px;
         }
+        /* زر الواتساب */
         .whatsapp-btn {
-            display: inline-block;
-            margin-top: 25px;
             background: #25d366;
             color: white;
-            padding: 12px 24px;
-            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 16px;
+            border-radius: 30px;
             text-decoration: none;
             font-weight: bold;
+            font-size: 16px;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.2);
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>MOH STORE</h1>
-        <p>متجرك الموثوق لتطبيقات الأيفون الموقعة</p>
-
-        <div class="app-card">
-            <span>تطبيق 1 (App 1)</span>
-            <a href="#" class="btn">تحميل</a>
+        <div class="header">
+            <h1 class="logo-title">MOH STORE</h1>
+            <p class="subtitle">PRIVATE ACCESS • VIP SYSTEM</p>
         </div>
 
-        <div class="app-card">
-            <span>تطبيق 2 (App 2)</span>
-            <a href="#" class="btn">تحميل</a>
+        <!-- شبكة بطاقات الأشهر -->
+        <div class="months-grid">
+            <a href="january.html" class="month-card">
+                <div class="dot"></div>
+                <span class="month-name">يناير</span>
+                <span class="month-num">01</span>
+            </a>
+            <a href="february.html" class="month-card">
+                <div class="dot"></div>
+                <span class="month-name">فبراير</span>
+                <span class="month-num">02</span>
+            </a>
+            <a href="march.html" class="month-card">
+                <div class="dot"></div>
+                <span class="month-name">مارس</span>
+                <span class="month-num">03</span>
+            </a>
+            <a href="april.html" class="month-card">
+                <div class="dot"></div>
+                <span class="month-name">أبريل</span>
+                <span class="month-num">04</span>
+            </a>
+            <a href="may.html" class="month-card">
+                <div class="dot"></div>
+                <span class="month-name">مايو</span>
+                <span class="month-num">05</span>
+            </a>
+            <a href="june.html" class="month-card">
+                <div class="dot"></div>
+                <span class="month-name">يونيو</span>
+                <span class="month-num">06</span>
+            </a>
+            <a href="july.html" class="month-card">
+                <div class="dot"></div>
+                <span class="month-name">يوليو</span>
+                <span class="month-num">07</span>
+            </a>
+            <a href="august.html" class="month-card">
+                <div class="dot"></div>
+                <span class="month-name">أغسطس</span>
+                <span class="month-num">08</span>
+            </a>
         </div>
 
-        <div class="app-card">
-            <span>تطبيق 3 (App 3)</span>
-            <a href="#" class="btn">تحميل</a>
-        </div>
-
-        <div class="app-card">
-            <span>تطبيق 4 (App 4)</span>
-            <a href="#" class="btn">تحميل</a>
-        </div>
-
-        <br>
-        <a href="https://wa.me/966538506619" class="whatsapp-btn" target="_blank">تواصل عبر الواتساب (لطلب الاشتراك وتفعيل UDID)</a>
+        <a href="https://wa.me/966538506619" class="whatsapp-btn" target="_blank">
+            تواصل معي عبر الواتساب
+        </a>
     </div>
 
 </body>
 </html>
-
