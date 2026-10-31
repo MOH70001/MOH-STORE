@@ -42,18 +42,18 @@
             margin-top: 5px;
             font-weight: 600;
         }
-        /* شبكة الأشهر */
+        /* شبكة الأشهر (12 شهراً) */
         .months-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 15px;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
         .month-card {
             background: #11151c;
             border: 1px solid #1f2430;
             border-radius: 20px;
-            padding: 25px 15px;
+            padding: 20px 15px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -73,20 +73,45 @@
             background-color: #238636;
             border-radius: 50%;
             position: absolute;
-            top: 15px;
+            top: 12px;
             box-shadow: 0 0 8px #238636;
         }
         .month-name {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: bold;
-            margin-top: 8px;
+            margin-top: 6px;
         }
         .month-num {
-            font-size: 11px;
+            font-size: 10px;
             color: #484f58;
-            margin-top: 4px;
+            margin-top: 2px;
         }
-        /* زر الواتساب */
+        /* أزرار الخدمات (نسخ UDID والواتساب) */
+        .action-btns {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        .udid-btn {
+            background: #1f2430;
+            color: #58a6ff;
+            border: 1px solid #30363d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .udid-btn:active {
+            background: #282e39;
+        }
         .whatsapp-btn {
             background: #25d366;
             color: white;
@@ -94,12 +119,18 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
-            padding: 16px;
-            border-radius: 30px;
+            padding: 15px;
+            border-radius: 25px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 16px;
+            font-size: 15px;
             box-shadow: 0 4px 20px rgba(37, 211, 102, 0.2);
+        }
+        #copyMsg {
+            font-size: 12px;
+            color: #238636;
+            margin-top: 5px;
+            display: none;
         }
     </style>
 </head>
@@ -111,54 +142,41 @@
             <p class="subtitle">PRIVATE ACCESS • VIP SYSTEM</p>
         </div>
 
-        <!-- شبكة بطاقات الأشهر -->
+        <!-- شبكة الأشهر (12 شهراً) -->
         <div class="months-grid">
-            <a href="january.html" class="month-card">
-                <div class="dot"></div>
-                <span class="month-name">يناير</span>
-                <span class="month-num">01</span>
-            </a>
-            <a href="february.html" class="month-card">
-                <div class="dot"></div>
-                <span class="month-name">فبراير</span>
-                <span class="month-num">02</span>
-            </a>
-            <a href="march.html" class="month-card">
-                <div class="dot"></div>
-                <span class="month-name">مارس</span>
-                <span class="month-num">03</span>
-            </a>
-            <a href="april.html" class="month-card">
-                <div class="dot"></div>
-                <span class="month-name">أبريل</span>
-                <span class="month-num">04</span>
-            </a>
-            <a href="may.html" class="month-card">
-                <div class="dot"></div>
-                <span class="month-name">مايو</span>
-                <span class="month-num">05</span>
-            </a>
-            <a href="june.html" class="month-card">
-                <div class="dot"></div>
-                <span class="month-name">يونيو</span>
-                <span class="month-num">06</span>
-            </a>
-            <a href="july.html" class="month-card">
-                <div class="dot"></div>
-                <span class="month-name">يوليو</span>
-                <span class="month-num">07</span>
-            </a>
-            <a href="august.html" class="month-card">
-                <div class="dot"></div>
-                <span class="month-name">أغسطس</span>
-                <span class="month-num">08</span>
-            </a>
+            <a href="january.html" class="month-card"><div class="dot"></div><span class="month-name">يناير</span><span class="month-num">01</span></a>
+            <a href="february.html" class="month-card"><div class="dot"></div><span class="month-name">فبراير</span><span class="month-num">02</span></a>
+            <a href="march.html" class="month-card"><div class="dot"></div><span class="month-name">مارس</span><span class="month-num">03</span></a>
+            <a href="april.html" class="month-card"><div class="dot"></div><span class="month-name">أبريل</span><span class="month-num">04</span></a>
+            <a href="may.html" class="month-card"><div class="dot"></div><span class="month-name">مايو</span><span class="month-num">05</span></a>
+            <a href="june.html" class="month-card"><div class="dot"></div><span class="month-name">يونيو</span><span class="month-num">06</span></a>
+            <a href="july.html" class="month-card"><div class="dot"></div><span class="month-name">يوليو</span><span class="month-num">07</span></a>
+            <a href="august.html" class="month-card"><div class="dot"></div><span class="month-name">أغسطس</span><span class="month-num">08</span></a>
+            <a href="september.html" class="month-card"><div class="dot"></div><span class="month-name">سبتمبر</span><span class="month-num">09</span></a>
+            <a href="october.html" class="month-card"><div class="dot"></div><span class="month-name">أكتوبر</span><span class="month-num">10</span></a>
+            <a href="november.html" class="month-card"><div class="dot"></div><span class="month-name">نوفمبر</span><span class="month-num">11</span></a>
+            <a href="december.html" class="month-card"><div class="dot"></div><span class="month-name">ديسمبر</span><span class="month-num">12</span></a>
         </div>
 
-        <a href="https://wa.me/966538506619" class="whatsapp-btn" target="_blank">
-            تواصل معي عبر الواتساب
-        </a>
+        <!-- أزرار التفاعل -->
+        <div class="action-btns">
+            <button class="udid-btn" onclick="getUDID()">📋 نسخ معرف الجهاز (UDID)</button>
+            <div id="copyMsg">تم نسخ الـ UDID أو توجيهك للحصول عليه!</div>
+            
+            <a href="https://wa.me/966538506619" class="whatsapp-btn" target="_blank">
+                💬 تواصل معي عبر الواتساب
+            </a>
+        </div>
     </div>
+
+    <script>
+        function getUDID() {
+            // ملاحظة: متصفح الجوال (سفاري) لأسباب أمنية لا يستطيع قراءة UDID الجهاز مباشرة بدون ملف تعريف (Profile).
+            // لذلك نقوم بتوجيهه لصفحة ملف التعريف الشهيرة أو تنبيهه، أو يمكنك ربطه برابط استخراج الUDID الشهير.
+            alert("للحصول على UDID جهازك، سيتم توجيهك لصفحة استخراج المعرف، ثم قم بنسخه وإرساله عبر الواتساب.");
+            window.location.href = "https://www.get.udid.io/"; // رابط مجاني موثوق لاستخراج الـ UDID للعملاء
+        }
+    </script>
 
 </body>
 </html>
